@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -E "$CFILE" -o "c" && sed -i '1i\# 1 "'"$CFILE"'"' c && cat "c"
+gcc -E "$CFILE" -o "c"
