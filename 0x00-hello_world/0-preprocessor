@@ -1,2 +1,2 @@
-gcc -E "$CFILE" -o "c"
-cat "c"
+#!/bin/bash
+gcc -E "$CFILE" -o "c" && cat "c"
