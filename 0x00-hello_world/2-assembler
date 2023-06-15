@@ -1,0 +1,8 @@
+#!/bin/bash
+CFILE="main.c"
+
+BASENAME="${CFILE%.*}"
+
+OUTPUT_FILE="${BASENAME}.s"
+
+gcc -S "$CFILE" -o "$OUTPUT_FILE"
