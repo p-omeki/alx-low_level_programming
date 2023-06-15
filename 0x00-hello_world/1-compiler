@@ -1,7 +1,2 @@
 #!/bin/bash
-CFILE="main.c"
-BASENAME="${CFILE%.*}"
-
-OUTPUT_FILE="${BASENAME}.o"
-
-gcc -c "$CFILE" -o "$OUTPUT_FILE"
+CFILE="main.c"; BASENAME="${CFILE%.*}"; OUTPUT_FILE="${BASENAME}.o"; gcc -c "$CFILE" -o "$OUTPUT_FILE"
