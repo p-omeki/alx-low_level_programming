@@ -1,5 +1,2 @@
 #!/bin/bash
-
-CFILE="main.c"
-
-gcc "$CFILE" -o cisfun
+CFILE="main.c";gcc "$CFILE" -o cisfun
