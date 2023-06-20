@@ -1,2 +1,1 @@
-# alx-low_level_programming
-C Language (Compiled Language)
+echo "0x02. C - Functions, nested loops"
