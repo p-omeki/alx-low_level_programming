@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+unsigned long largest_prime_factor(unsigned long n);
 void print_triangle(int size);
 void fizzbuzz(void);
 void print_square(int size);
