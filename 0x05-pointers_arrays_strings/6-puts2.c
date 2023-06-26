@@ -16,6 +16,7 @@ void puts2(char *str)
         count++;
     }
 
-    _putchar('\n');
+    if (count < 224)
+        _putchar('\n');
 }
 
