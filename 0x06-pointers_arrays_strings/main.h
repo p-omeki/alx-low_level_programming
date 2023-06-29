@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+char *cap_string(char *str);
 char *string_toupper(char *str);
 void reverse_array(int *a, int n);
 int _strcmp(const char *s1, const char *s2);
