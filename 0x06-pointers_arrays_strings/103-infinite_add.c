@@ -1,22 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 #include <string.h>
 
-/**
- * reverse_string - Reverses a string
- * @str: Pointer to the string
- */
-void reverse_string(char *str)
-{
-	int i, j;
-	char temp;
-
-	for (i = 0, j = strlen(str) - 1; i < j; i++, j--)
-	{
-		temp = str[i];
-		str[i] = str[j];
-		str[j] = temp;
-	}
-}
+void reverse_string(char *str);
 
 /**
  * infinite_add - Adds two numbers
@@ -64,21 +50,39 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] = (sum % 10) + '0';
 	}
 
-	/* Check if there is still a carry */
-	if (carry)
+	/* Check if there is a remaining carry */
+	if (carry > 0)
 	{
-		if (i == size_r - 1) /* Check if there is enough space for the carry */
+		if (i == size_r - 1 || len1 > 0 || len2 > 0)
 			return (0);
 
 		r[i] = carry + '0';
 		i++;
 	}
 
+	/* Null-terminate the result */
 	r[i] = '\0';
 
 	/* Reverse the result */
 	reverse_string(r);
 
 	return (r);
+}
+
+/**
+ * reverse_string - Reverses a string
+ * @str: Pointer to the string
+ */
+void reverse_string(char *str)
+{
+	int i, j;
+	char temp;
+
+	for (i = 0, j = (int)strlen(str) - 1; i < j; i++, j--)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+	}
 }
 
