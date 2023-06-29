@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+void print_buffer(char *b, int size);
 int _putchar(char c);
 void print_number(int n);
 char *rot13(char *str);
