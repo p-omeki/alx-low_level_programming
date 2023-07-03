@@ -18,14 +18,3 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	return dest;
 }
 
-/**
- * _putchar - Writes a character to the standard output
- * @c: The character to be written
- *
- * Return: On success, return the character written. On error, return -1.
- */
-int _putchar(char c)
-{
-	return putchar(c);
-}
-

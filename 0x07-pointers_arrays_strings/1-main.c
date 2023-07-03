@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * simple_print_buffer - Prints buffer in hexadecimal
+ * @buffer: The address of memory to print
+ * @size: The size of the memory to print
  *
- * Return: Nothing.
+ * Return: Nothing
  */
 void simple_print_buffer(char *buffer, unsigned int size)
 {
@@ -17,39 +17,32 @@ void simple_print_buffer(char *buffer, unsigned int size)
 	{
 		if (i % 10)
 		{
-			_putchar(' ');
+			printf(" ");
 		}
 		if (!(i % 10) && i)
 		{
-			_putchar('\n');
+			printf("\n");
 		}
 		printf("0x%02x", buffer[i]);
 		i++;
 	}
-	_putchar('\n');
+	printf("\n");
 }
 
 /**
- * main - check the code
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
-	char src[10] = "Hello";
-	char dest[10] = "";
-	unsigned int n = 5;
+	char buffer[98] = {0};
+	char buffer2[98] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
 
-	printf("Before memcpy:\n");
-	printf("src: %s\n", src);
-	printf("dest: %s\n", dest);
-
-	_memcpy(dest, src, n);
-
-	printf("After memcpy:\n");
-	printf("src: %s\n", src);
-	printf("dest: %s\n", dest);
-
+	simple_print_buffer(buffer, 98);
+	_memcpy(buffer + 50, buffer2, 10);
+	printf("-------------------------------------------------\n");
+	simple_print_buffer(buffer, 98);
 	return (0);
 }
 
