@@ -21,7 +21,7 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1); /* Error: Invalid input */
-	
+
 	return (calculate_sqrt(n, 0));
 }
 
