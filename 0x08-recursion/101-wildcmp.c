@@ -10,23 +10,23 @@
 int wildcmp(char *s1, char *s2)
 {
 	if (*s1 == '\0' && *s2 == '\0')
-		return (1); /* Base case: both strings are empty */
+		return 1; /* Base case: both strings are empty */
 
 	if (*s1 == *s2 || *s2 == '*')
-		return (wildcmp(s1 + 1, s2 + 1)); /* Characters match or s2 contains '*' */
+		return wildcmp(s1 + 1, s2 + 1); /* Characters match or s2 contains '*' */
 
 	if (*s2 == '*')
 	{
-		while (*(s2 + 1) == '*')
-			s2++; /* Skip consecutive '*' characters */
+		if (*(s2 + 1) == '*')
+			return wildcmp(s1, s2 + 1); /* Skip consecutive '*' characters */
 
 		if (*(s2 + 1) == '\0')
-			return (1); /* s2 is at the end, s1 can be any remaining characters */
+			return 1; /* s2 is at the end, s1 can be any remaining characters */
 
 		if (*s1 != '\0')
-			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)); /* Try matching s1 with s2+1 or s1+1 with s2 */
+			return wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2); /* Try matching s1 with s2+1 or s1+1 with s2 */
 	}
 
-	return (0); /* No match found */
+	return 0; /* No match found */
 }
 
