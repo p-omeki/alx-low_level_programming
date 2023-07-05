@@ -1,45 +1,32 @@
 #include "main.h"
 
 /**
- * calculate_sqrt - Calculates the square root of a number using recursion.
- * @n: The number to calculate the square root of.
- * @guess: The current guess for the square root.
+ * wildcmp - Compares two strings with wildcard pattern matching.
+ * @s1: The first string.
+ * @s2: The second string with wildcard pattern.
  *
- * Return: The square root of n if found, -1 if n does not have a natural
- *         square root.
+ * Return: 1 if the strings match, 0 otherwise.
  */
-int calculate_sqrt(int n, int guess);
-
-/**
- * _sqrt_recursion - Returns the natural square root of a number.
- * @n: The number to calculate the square root of.
- *
- * Return: The square root of n if found, -1 if n is negative or does not have
- *         a natural square root.
- */
-int _sqrt_recursion(int n)
+int wildcmp(char *s1, char *s2)
 {
-	if (n < 0)
-		return (-1); /* Error: Invalid input */
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1); /* Base case: both strings are empty */
 
-	return (calculate_sqrt(n, 0));
-}
+	if (*s1 == *s2 || *s2 == '*')
+		return (wildcmp(s1 + 1, s2 + 1)); /* Characters match or s2 contains '*' */
 
-/**
- * calculate_sqrt - Calculates the square root of a number using recursion.
- * @n: The number to calculate the square root of.
- * @guess: The current guess for the square root.
- *
- * Return: The square root of n if found, -1 if n does not have a natural
- *         square root.
- */
-int calculate_sqrt(int n, int guess)
-{
-	if (guess * guess == n)
-		return (guess); /* Base case: found the square root */
-	else if (guess * guess > n)
-		return (-1); /* Error: n does not have a natural square root */
+	if (*s2 == '*')
+	{
+		if (*(s2 + 1) == '*')
+			return (wildcmp(s1, s2 + 1)); /* Skip consecutive '*' characters */
 
-	return (calculate_sqrt(n, guess + 1)); /* Recursive call */
+		if (*(s2 + 1) == '\0')
+			return (1); /* s2 is at the end, s1 can be any remaining characters */
+
+		if (*s1 != '\0')
+			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)); /* s1 with s2+1 */
+	}
+
+	return (0); /* No match found */
 }
 
