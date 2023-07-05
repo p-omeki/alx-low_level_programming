@@ -40,6 +40,6 @@ int calculate_sqrt(int n, int guess)
 	else if (guess * guess > n)
 		return (-1); /* Error: n does not have a natural square root */
 	else
-		return (calculate_sqrt(n, guess + 1)); /* Recursive call with incremented guess */
+        	return (calculate_sqrt(n, guess + 1)); 
 }
 
