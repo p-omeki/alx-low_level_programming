@@ -24,7 +24,7 @@ int wildcmp(char *s1, char *s2)
 			return (1); /* s2 is at the end, s1 can be any remaining characters */
 
 		if (*s1 != '\0')
-			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)); /* Try matching s1 with s2+1 or s1+1 with s2 */
+			return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2)); /* s1 with s2+1 */
 	}
 
 	return (0); /* No match found */
