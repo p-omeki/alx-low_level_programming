@@ -42,6 +42,7 @@ int is_palindrome_helper(char *s, int start, int end)
 int is_palindrome(char *s)
 {
 	int length = str_length(s);
+
 	return (is_palindrome_helper(s, 0, length - 1));
 }
 
