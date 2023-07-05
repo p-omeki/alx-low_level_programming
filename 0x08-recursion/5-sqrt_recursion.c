@@ -39,7 +39,7 @@ int calculate_sqrt(int n, int guess)
 		return (guess); /* Base case: found the square root */
 	else if (guess * guess > n)
 		return (-1); /* Error: n does not have a natural square root */
-	else
-		return (calculate_sqrt(n, guess + 1)); /* Recursive call with incremented guess */
+	else                                                                                                                   
+		return (calculate_sqrt(n, guess + 1)); /* RC with incremented guess */
 }
 
