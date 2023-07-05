@@ -8,10 +8,10 @@
  */
 int str_length(char *s)
 {
-    if (*s == '\0')
-        return 0;
+	if (*s == '\0')
+		return (0);
 
-    return 1 + str_length(s + 1);
+	return (1 + str_length(s + 1));
 }
 
 /**
@@ -24,13 +24,13 @@ int str_length(char *s)
  */
 int is_palindrome_helper(char *s, int start, int end)
 {
-    if (start >= end)
-        return 1;  /* Palindrome condition met */
+	if (start >= end)
+		return (1); /* Palindrome condition met */
 
-    if (s[start] != s[end])
-        return 0;  /* Not a palindrome */
+	if (s[start] != s[end])
+		return (0); /* Not a palindrome */
 
-    return is_palindrome_helper(s, start + 1, end - 1);
+	return (is_palindrome_helper(s, start + 1, end - 1));
 }
 
 /**
@@ -41,7 +41,7 @@ int is_palindrome_helper(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-    int length = str_length(s);
-    return is_palindrome_helper(s, 0, length - 1);
+	int length = str_length(s);
+	return (is_palindrome_helper(s, 0, length - 1));
 }
 
