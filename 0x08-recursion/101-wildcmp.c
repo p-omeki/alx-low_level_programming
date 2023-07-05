@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 
-int main(void)
-{
-    char *s1 = "hello";
-    char *s2 = "h*llo";
-
-    int result = wildcmp(s1, s2);
-
-    printf("Result: %d\n", result);
-
-    return 0;
-}
-
 /**
  * wildcmp - Compares two strings with wildcard pattern matching.
  * @s1: The first string.
