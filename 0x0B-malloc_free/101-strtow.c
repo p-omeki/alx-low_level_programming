@@ -20,9 +20,33 @@ char **strtow(char *str)
 	word_count = 0;
 	while (str[len] != '\0')
 	{
-		if (str[len] != ' ' && (str[len + 1] == ' ' || str[len + 1] == '\0'))
+		while (str[len] == ' ')
+			len++;
+		if (str[len] != '\0' && str[len] != ' ')
+		{
 			word_count++;
-		len++;
+			while (str[len] != ' ' && str[len] != '\0')
+				len++;
+		}
+	}
+
+	if (word_count == 0)
+	{
+		words = malloc(sizeof(char *) * 2);
+		if (words == NULL)
+			return (NULL);
+
+		words[0] = malloc(sizeof(char));
+		if (words[0] == NULL)
+		{
+			free(words);
+			return (NULL);
+		}
+
+		words[0][0] = ' ';
+		words[1] = NULL;
+
+		return (words);
 	}
 
 	words = malloc(sizeof(char *) * (word_count + 1));
