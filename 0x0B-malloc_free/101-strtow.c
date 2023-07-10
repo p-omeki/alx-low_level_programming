@@ -11,12 +11,11 @@
 char **strtow(char *str)
 {
 	char **words;
-	int i, j, k, word_count, len, word_len;
+	int word_count, len, i, j, k, word_len;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	/* Count the number of words */
 	len = 0;
 	word_count = 0;
 	while (str[len] != '\0')
@@ -26,12 +25,10 @@ char **strtow(char *str)
 		len++;
 	}
 
-	/* Allocate memory for the array of words */
 	words = malloc(sizeof(char *) * (word_count + 1));
 	if (words == NULL)
 		return (NULL);
 
-	/* Allocate memory for each word */
 	i = 0;
 	k = 0;
 	while (str[i] != '\0' && k < word_count)
@@ -55,7 +52,7 @@ char **strtow(char *str)
 		k++;
 	}
 
-	words[k] = NULL; /* Add the NULL at the end */
+	words[k] = NULL;
 
 	return (words);
 }
