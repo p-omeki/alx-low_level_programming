@@ -15,19 +15,19 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int total_size, i;
 
 	if (nmemb == 0 || size == 0)
-		return NULL;
+		return (NULL);
 
 	total_size = nmemb * size;
 
 	ptr = malloc(total_size);
 
 	if (ptr == NULL)
-		return NULL;
+		return (NULL);
 
 	/* Set memory to zero */
 	for (i = 0; i < total_size; i++)
 		*((char *)ptr + i) = 0;
 
-	return ptr;
+	return (ptr);
 }
 
