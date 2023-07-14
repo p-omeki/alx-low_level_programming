@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int _isdigit(char *str);
+void multiply(char *num1, char *num2);
+
 /**
  * _isdigit - Checks if a string consists of only digits
  * @str: The string to check
