@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
     unsigned char *main_addr = (unsigned char *)main;
 
     /* Print the opcodes of the main function */
-    for (i = 0; i < bytes; i++)
+    for (i = 0; i < bytes - 1; i++)
     {
         printf("%02x ", main_addr[i]);
     }
-    printf("\n");
+    printf("%02x\n", main_addr[i]);
 
     return (0);
 }
