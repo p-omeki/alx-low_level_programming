@@ -1,1 +1,1 @@
-echo "Official README.md file for this Repository"
+echo "0x12. C - Singly linked lists"
