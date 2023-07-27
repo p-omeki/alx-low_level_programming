@@ -11,14 +11,18 @@ size_t print_list(const list_t *h)
 {
     size_t count = 0;
 
+    /* Traverse the list and print each node */
     while (h != NULL)
     {
+        /* Check if the string in the current node is NULL */
         if (h->str != NULL)
             printf("[%u] %s\n", h->len, h->str);
         else
             printf("[0] (nil)\n");
 
+        /* Move to the next node */
         h = h->next;
+        /* Increment the node count */
         count++;
     }
 
