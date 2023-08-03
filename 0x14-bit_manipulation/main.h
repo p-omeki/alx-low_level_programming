@@ -7,6 +7,8 @@
  *
  * Return: The converted number, or 0 if there is an invalid char or b is NULL.
  */
+int _putchar(char c);
+void print_binary(unsigned long int n);
 unsigned int binary_to_uint(const char *b);
 
 #endif /* MAIN_H */
