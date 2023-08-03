@@ -7,6 +7,7 @@
  *
  * Return: The converted number, or 0 if there is an invalid char or b is NULL.
  */
+int clear_bit(unsigned long int *n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 int get_bit(unsigned long int n, unsigned int index);
 int _putchar(char c);
